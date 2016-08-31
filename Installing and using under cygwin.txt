@@ -1,5 +1,9 @@
+1.
 Install CYGWIN and C/C++
 Dowinload GLPK and copy the folder created in Documents of Cygwin
 Install GLPK -> compile, make, and make install, make clean
+
+2.
+Install GLPK package from CYGWIN 
 
 To compile use g++ filename.cpp -lglpk -o output.exe
