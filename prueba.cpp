@@ -1,8 +1,8 @@
 #include <stdio.h>            /* C input/output                       */
 #include <stdlib.h>           /* C standard library                   */
-extern "C"{
+//extern "C"{
 #include "glpk.h"             /* GNU GLPK linear/mixed integer solver */
-}
+//}
 
 int main(){
 
