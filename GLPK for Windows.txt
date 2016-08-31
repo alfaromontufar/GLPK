@@ -1,0 +1,55 @@
+Building a C program using the GLPK library
+
+The following description describes how to build a first program using the GLPK library. A 32bit system is assumed.
+ - open Visual Studio Express 2010 C++
+ - create a new "Win32 Console Application"
+ - do not choose compiled headers
+ - open the Project Properties dialog:
+ - under Linker > Input > Additional Dependencies : add "D:\DEVENV\Workspace\glpk-4.55\w32\glpk_4_55.lib"
+ - under Configuration Properties > VC++ Directories > Include directories : add "D:\DEVENV\Workspace\glpk-4.55\src"
+
+
+
+Enter the following code and then hit F5 to compile and run the test:
+
+#include <stdio.h>
+#include <conio.h>
+#include "glpk.h"
+ 
+int main(int argc, char* argv[]) {
+    printf ("GLPK version %s\n", glp_version());
+    printf ("Press any key\n");
+    while (!kbhit()){}
+    getch();
+    return 0;
+}
+
+
+The program will output the GLPK version, and wait for any key to be hit, e.g. 
+
+GLPK version 4.47
+Press any key
+
+
+
+If you were using precompiled headers test.cpp would be
+
+
+#include "stdafx.h"
+int main(int argc, char* argv[]) {
+    printf ("GLPK version %s\n", glp_version());
+    printf ("Press any key\n");
+    while (!kbhit()){}
+    getch();
+    return 0;
+}
+
+
+And stdafx.h would be
+
+
+#pragma once
+#include <stdio.h>
+#include <conio.h>
+#include "glpk.h"
+
